@@ -31,3 +31,10 @@ while True:
         # Tipo de persona LETRA
         tipo = info[0:2]
         tipo = int(tipo)
+
+        # Extraemos coordenadas
+        pts = np.array([codes.polygon], np.int32)
+        xi, yi = codes.rect.left, codes.rect.top
+
+        # Redimensionamos
+        pts = pts.reshape((-1,1,2))
