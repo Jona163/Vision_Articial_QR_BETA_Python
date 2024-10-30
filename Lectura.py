@@ -19,3 +19,15 @@ cap = cv2.VideoCapture(0)
 while True:
     # Leemos los frames
     ret, frame = cap.read()
+
+    # Leemos los codigos QR
+    for codes in decode(frame):
+        # Extraemos info
+        #info = codes.data
+
+        # Decodidficamos
+        info = codes.data.decode('utf-8')
+
+        # Tipo de persona LETRA
+        tipo = info[0:2]
+        tipo = int(tipo)
