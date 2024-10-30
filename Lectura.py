@@ -38,3 +38,17 @@ while True:
 
         # Redimensionamos
         pts = pts.reshape((-1,1,2))
+
+        if tipo == 69:  # J->74 # E->69
+            # Dibujamos
+            cv2.polylines(frame, [pts], True, (255, 255, 0), 5)
+            cv2.putText(frame, 'E0' + str(info[2:]), (xi - 15, yi - 15), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 55, 0), 2)
+            print(" El usuario es accionista de la empresa  \n"
+                  " Numero de Identificacion: E", str(info[2:]))
+
+        if tipo == 71:  # F->70 # G->71
+            # Dibujamos
+            cv2.polylines(frame, [pts], True, (255, 0, 255), 5)
+            cv2.putText(frame, 'G0' + str(info[2:]), (xi - 15, yi - 15), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2)
+            print(" El usuario pertenece a la seccion ejecutiva \n"
+                  " Numero de Identificacion: G", str(info[2:]))
