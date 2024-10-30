@@ -39,3 +39,19 @@ while True:
             color, prefix, msg = (0, 255, 0), 'A0', "Usuario general"
         else:
             color, prefix, msg = (0, 0, 255), 'UNK', "Tipo desconocido"
+
+        # Dibujamos el polígono y mostramos el texto con información del usuario
+        cv2.polylines(frame, [pts], True, color, 5)
+        cv2.putText(frame, f'{prefix}{info[2:]}', (xi - 15, yi - 15), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
+        print(f"{msg} | Número de Identificación: {prefix}{info[2:]}")
+    
+    # Mostramos el frame en pantalla
+    cv2.imshow(" LECTOR DE QR", frame)
+
+    # Salida si se presiona 'Esc'
+    if cv2.waitKey(5) & 0xFF == 27:
+        break
+
+# Liberamos la captura y cerramos ventanas
+cap.release()
+cv2.destroyAllWindows()
