@@ -59,3 +59,11 @@ while True:
             cv2.putText(frame, 'S0' + str(info[2:]), (xi - 15, yi - 15), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
             print(" El usuario pertenece a la seccion salud \n"
                   " Numero de Identificacion: S", str(info[2:]))
+
+        if tipo == 65:  # C->99 # S->83
+            # Dibujamos
+            cv2.polylines(frame, [pts], True, (0, 255, 255), 5)
+            cv2.putText(frame, 'A0' + str(info[2:]), (xi - 15, yi - 15), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
+            print(" Numero de Identificacion: A", str(info[2:]))
+        # Imprimimos
+        print(info)
