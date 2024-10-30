@@ -67,3 +67,10 @@ while True:
             print(" Numero de Identificacion: A", str(info[2:]))
         # Imprimimos
         print(info)
+
+    # Mostramos FPS
+    cv2.imshow(" LECTOR DE QR", frame)
+    # Leemos teclado
+    t = cv2.waitKey(5)
+    if t == 27:
+        break
