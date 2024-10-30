@@ -11,3 +11,11 @@ import png
 from pyqrcode import QRCode
 from pyzbar.pyzbar import decode
 import numpy as np
+
+# Creamos la videocaptura
+cap = cv2.VideoCapture(0)
+
+# Empezamos
+while True:
+    # Leemos los frames
+    ret, frame = cap.read()
