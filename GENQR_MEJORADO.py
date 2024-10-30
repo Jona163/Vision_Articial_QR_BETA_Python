@@ -18,3 +18,10 @@ for con in range(inicio_id, fin_id + 1):
     # Creamos el identificador con prefijo '65'
     id_qr = f'65{con}'
     
+    # Generamos el QR con el identificador
+    qr = pyqrcode.create(id_qr, error='L')
+    
+    # Guardamos el archivo PNG con el nombre correspondiente
+    qr.png(f'A{id_qr}.png', scale=6)
+
+print("Códigos QR generados y guardados correctamente.")
